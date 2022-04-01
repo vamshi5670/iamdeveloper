@@ -1,0 +1,36 @@
+<form class="col-ms-12">
+
+
+    <!-- Text interpolation -->
+    <h1>Welcome to {{name}}</h1>
+
+    <div class="col-md-12 login">
+
+
+        <div>
+            <input class="uname" type="text" placeholder="username">
+            <input type="password" placeholder="password">
+        </div>
+
+        <div class="bt1">
+            <button type="button" (click)="login()">Log in</button>
+        </div>
+
+        <div class="bt1">
+            <a href="">Forgotten password?</a>
+        </div>
+
+
+
+        <hr>
+
+        <div class="bt1">
+            <button type="button" (click)="onSubmit()">Create a new account </button>
+        </div>
+
+
+
+
+    </div>
+
+</form>

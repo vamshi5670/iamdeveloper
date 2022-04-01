@@ -1,0 +1,6 @@
+.leftpanel {
+    height: 100vh;
+    width: 13%;
+    background-color: rgba(58, 74, 80, 0.452) !important;
+    position: absolute;
+}

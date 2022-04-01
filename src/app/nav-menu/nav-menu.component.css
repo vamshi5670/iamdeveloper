@@ -1,0 +1,53 @@
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    margin-bottom: 0%! important;
+}
+
+.menu {
+    position: absolute;
+    margin-left: 14px;
+}
+
+.leftpanel_exp {
+    margin-left: 0px;
+    border: 1px solid blue;
+    transition: 0.5s;
+}
+
+.leftpanel {
+    margin-left: -15%;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+.bi-list {
+    margin-left: 3%;
+    width: 2%;
+    height: 3%;
+}
+
+.mainbar_exp {
+    margin-left: -15%;
+    transition: 0.5s;
+}
+
+.mainbar {
+    margin-left: 0px;
+    transition: 0.5s;
+}

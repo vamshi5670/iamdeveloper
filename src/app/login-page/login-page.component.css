@@ -1,0 +1,22 @@
+.login {
+    border: 3px solid;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 6px;
+    margin-top: 2px;
+}
+
+.bt1 {
+    text-align: center;
+}
+
+hr {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}

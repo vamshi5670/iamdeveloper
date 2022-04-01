@@ -1,0 +1,213 @@
+<form [formGroup]="signUpForm" class="signup" id="5">
+
+    <div class="header">
+        <h1>Signup</h1>
+    </div>
+
+    <hr>
+
+    <div class="col-md-12 row" id="flname">
+
+        <div class="fname col-md-6">
+            <input class="col-md-12" type="text" formControlName="firstname" placeholder="First name" required>
+            <div *ngIf="(signUpForm.controls['firstname'].invalid && signUpForm.controls['firstname'].touched)" class="warn">
+                <div *ngIf="signUpForm.controls['firstname'].errors?.required">
+                    Enter First Name
+                </div>
+                <div *ngIf="signUpForm.controls['firstname'].errors?.pattern">
+                    Enter valid name
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="lname col-md-6">
+
+            <input formControlName="lastname" class="col-md-12" type="text" id="lname" placeholder="Last name">
+            <div *ngIf="signUpForm.controls['lastname'].invalid && signUpForm.controls['lastname'].touched" class="warn">
+                <div *ngIf="signUpForm.controls['lastname'].errors?.required">
+                    Enter Last Name.
+                </div>
+                <div *ngIf="signUpForm.controls['lastname'].errors?.pattern">
+                    Enter valid name
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class=gmail>
+
+        <input formControlName="gmail" class="col-md-12" type="email" id="gmail" placeholder="Gmail">
+        <div *ngIf="(signUpForm.controls['gmail'].invalid && signUpForm.controls['gmail'].touched)" class="warn">
+            <div *ngIf="signUpForm.controls['gmail'].errors?.required">
+                Enter mail
+            </div>
+            <div *ngIf="signUpForm.controls['gmail'].errors?.pattern">
+                Enter valid gmail
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12 row Pwd">
+
+        <div class="col-md-6 password">
+            <div>
+                <input formControlName="password" class="col-md-12" placeholder="Password" [type]="showPassword ? 'text' : 'password'">
+                <div class="col-md-1"><i (click)="showPassword = !showPassword" class="bi bi-eye-fill" [hidden]="showPassword"></i>
+                    <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [hidden]="!showPassword"></i>
+                </div>
+            </div>
+            <div *ngIf="(signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched)" class="warn">
+                <div *ngIf="signUpForm.controls['password'].errors?.required">
+                    Enter password
+                </div>
+                <div *ngIf="signUpForm.controls['password'].errors?.pattern">
+                    Enter valid password
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 confpassword">
+            <input placeholder="Confirm password" formControlName="confpassword" class="col-md-12" [type]="showConfPassword ? 'text' : 'password'">
+            <div class="col-md-1"><i (click)="showConfPassword = !showConfPassword" class="bi bi-eye-fill" [hidden]="showConfPassword"></i>
+                <i class="bi bi-eye-slash-fill" (click)="showConfPassword = !showConfPassword" [hidden]="!showConfPassword"></i></div>
+        </div>
+        <div *ngIf="signUpForm.controls['confpassword'].invalid && signUpForm.controls['confpassword'].touched" class="warn">
+            Password not matched
+        </div>
+    </div>
+
+    <!-- <div class="row col-md-12"> 
+            <label for="gender">Gender :</label>
+            <div class="row col-md-2">
+                <input type="radio" id="gen1">
+               <div>Male</div>
+            </div>
+            <div>
+                <input class="col-md-1" type="radio">
+                <label for="female">F</label>
+            </div>
+        </div> -->
+
+    <!-- <div class="row col-md-12">
+
+            <div class="genname">Gender:</div>
+
+            <div class="col-md-3 genBr">Male <input class="mrdo" type="radio"> </div>
+            <div class="col-md-3 genBr">Female <input class="mrdo" type="radio"></div>
+            <div class="col-md-3 genBr">Custom <input class="mrdo" type="radio"></div>
+        </div> -->
+
+    <div class="genname">Gender:
+
+        <div class="gender row col-md-12">
+
+            <div class="col-md-3 genopt">Male <input class="genopt1" id="male1" value="Male" type="radio" name="gender">
+
+            </div>
+            <div class="col-md-3 genopt">Female <input class="genopt1" id="female1" value="Female" type="radio" name="gender"> </div>
+            <div class="col-md-3 genopt">Custom <input class="genopt1" id="custom" value="Custom" type="radio" name="gender"> </div>
+
+
+
+        </div>
+    </div>
+
+    <div>
+        <label class="mx-2" for="dob">Date of birth: </label>
+
+        <div class="col-md-12 row">
+
+            <!-- <input class="col-md-3 DOB" type="text " id="date ">
+
+            <input class="col-md-3 DOB" type="text " id="month ">
+            <input class="col-md-3 DOB" type="text " id="year "> -->
+
+            <select formControlName="date">
+                
+            <option  *ngFor="let dates of date" value={{dates}} type="number">{{dates}}
+                
+
+            </option>
+        </select>
+
+            <select formControlName="month">
+            <option *ngFor="let months of month" value={{months}}>{{months}} </option>
+        </select>
+            <select formControlName="year">
+            <option *ngFor="let years of year" value={{years}}> {{years}}</option>
+        </select>
+
+        </div>
+        <div *ngIf="(signUpForm.controls['date'].invalid && signUpForm.controls['date'].touched)" class="warn">
+            <!-- <div *ngIf="signUpForm.controls['date'].errors?.required"> -->
+            Invalid date
+            <!-- </div>
+            <div *ngIf="signUpForm.controls['date'].errors?.pattern">
+                Enter valid date
+            </div> -->
+        </div>
+    </div>
+
+    <div class="phnumber row col-md-12"> Mobile Number:
+        <!-- <label for="phno ">Phone Number: </label> -->
+        <input formControlName="countrycode" type="text" name="cc"> -
+        <input formControlName="phoneNumber" class="text2" type="text " id="phno">
+
+        <div *ngIf="signUpForm.controls['phoneNumber'].invalid && signUpForm.controls['phoneNumber'].touched" class="warn">
+            <div *ngIf="signUpForm.controls['phoneNumber'].errors?.required">
+                Phone number required.
+            </div>
+            <div *ngIf="signUpForm.controls['phoneNumber'].errors?.pattern">
+                Enter valid Phone Number.
+            </div>
+        </div>
+
+        <div *ngIf="signUpForm.controls['countrycode'].invalid && signUpForm.controls['countrycode'].touched" class="warn">
+            <div *ngIf="signUpForm.controls['countrycode'].errors?.required">
+                countrycode required.
+            </div>
+            <div *ngIf="signUpForm.controls['countrycode'].errors?.pattern">
+                Enter valid countrycode.
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <input class="Add1" type="text" id="add1 " placeholder="Address1">
+    </div>
+
+    <div>
+        <input class="Add2" type="text " id="add2 " placeholder="Address2 ">
+    </div>
+
+
+    <!-- <div class="St-code col-md-12 row">
+            <div class="col-md-6 State">
+                <input class="col-md-12 " type="text " id="state " placeholder="State ">
+            </div>
+            <div class="col-md-6 Pincode">
+                <input class="col-md-12 " type="text " id="pincode " placeholder="Pincode ">
+            </div>
+        </div> -->
+
+    <div class="col-md-12 row St-code">
+        <div class="col-md-6 State">
+            <input class="col-md-12" type="text" id="state" placeholder="Password">
+        </div>
+        <div class="col-md-6 Pincode">
+            <input class="col-md-12" type="text" id="pincode" placeholder="Confirm password">
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div class="bt1 ">
+        <button class="btn" type="submit" (click)="onSubmit()"> Signup</button>
+    </div>
+
+</form>

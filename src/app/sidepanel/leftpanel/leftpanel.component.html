@@ -1,0 +1,35 @@
+<div class="leftpanel">
+
+
+
+    <!-- <p>working</p> -->
+    <ol>
+        <div>
+            <a [routerLink]="['./profile']">Profile</a>
+            <ol>
+                <a [routerLink]="['./profile/admin']">Admin</a> <br>
+                <a [routerLink]="['./profile/manager']">Manager</a> <br>
+                <a [routerLink]="['./profile/user']">User</a>
+
+            </ol>
+
+        </div>
+
+        <div>
+            <a [routerLink]="['./dashboard']">Dashboard</a>
+            <ol>
+                <a [routerLink]="['./dashboard/child1']">FirstChild</a> <br>
+                <a [routerLink]="['./dashboard/child2']">SecondChild</a> <br>
+                <a [routerLink]="['./dashboard/child3']">ThirdChild</a>
+            </ol>
+        </div>
+
+        <div>
+            <a [routerLink]="['./aboutUs']">About US</a>
+        </div>
+    </ol>
+
+
+
+    <!-- <a href="">SignUp</a> -->
+</div>
